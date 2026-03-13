@@ -1,4 +1,4 @@
-
+<img width="2558" height="1359" alt="Kali Linux-2026-03-13-15-16-27" src="https://github.com/user-attachments/assets/5e1e76c8-9674-4c81-b84b-d3474ac30e55" />
 # Write-up: Phân tích và Khai thác lỗ hổng RCE (Unrestricted File Upload)
 
 Bài viết này trình bày chi tiết quá trình thiết lập kịch bản giả lập (Lab), phân tích lỗ hổng và thực hiện hoạt động khai thác **Unrestricted File Upload** dẫn đến **Remote Code Execution (RCE)** trên một ứng dụng web.
@@ -150,4 +150,44 @@ sử dụng command này để xóa cache trang nếu muốn test lại: localSt
 
 - sudo systemctl restart apache2
 - sudo pkill -u www-data bash
+----
+
+Now first this is the main page that we will attack
+
+<img width="2558" height="1359" alt="Kali Linux-2026-03-13-15-15-10" src="https://github.com/user-attachments/assets/7955caeb-5b31-4609-8c5c-8ddb5ea843f3" />
+
+ 
+You need to login to interact with website, when you login successfully. In this page, you can upload avatar file such as .png, .jpg but with hacker thinking check if the developer of web did not do the filter for upload file so you can bypass it easily.
+
+<img width="2558" height="1359" alt="Kali Linux-2026-03-13-15-15-58" src="https://github.com/user-attachments/assets/d414a171-6759-4c56-b7cf-0307ac9a0fc9" />
+
+ 
+First, to upload the file, you need to open the NetCat port.
+
+<img width="2558" height="1359" alt="Kali Linux-2026-03-13-15-16-14" src="https://github.com/user-attachments/assets/16314783-5fa4-4863-ba29-c59b45fc7fc0" />
+
+ 
+After successfully uploading the file, check if NetCat is listening on port 4444. Otherwise, you probably haven't accessed the correct URL to execute that file.
+
+<img width="2558" height="1359" alt="Kali Linux-2026-03-13-15-16-27" src="https://github.com/user-attachments/assets/bc1ec051-1afe-4cab-b4fd-56bcc9c615b9" />
+
+
+ 
+So, you should scan for hidden folders. You can use gobuster, dirsearch, dirb
+
+ <img width="2558" height="1359" alt="Kali Linux-2026-03-13-15-16-43" src="https://github.com/user-attachments/assets/9a7b9ba8-af08-413c-87d1-b29fac4df2ed" />
+
+See the uploads folder? Lets go to that
+
+ <img width="2558" height="1359" alt="Kali Linux-2026-03-13-15-17-18" src="https://github.com/user-attachments/assets/c52d2f82-ad50-4aca-aa06-1fa44468c5fa" />
+
+In the index of uploads file, Click on the file you uploaded earlier. It will keep spinning until you disconnect from Netcat.
+
+ <img width="2558" height="1359" alt="Kali Linux-2026-03-13-15-17-30" src="https://github.com/user-attachments/assets/256975c3-6b75-433a-8f0f-9030d2cf61fd" />
+
+Yass, now you have the shell for that server. 
+
+ <img width="2558" height="1359" alt="Kali Linux-2026-03-13-15-17-42" src="https://github.com/user-attachments/assets/e5291fb0-c01f-45af-a138-b0c840b87cc9" />
+
+
 
