@@ -1,4 +1,4 @@
-<img width="2558" height="1359" alt="Kali Linux-2026-03-13-15-16-27" src="https://github.com/user-attachments/assets/5e1e76c8-9674-4c81-b84b-d3474ac30e55" />
+
 # Write-up: Phân tích và Khai thác lỗ hổng RCE (Unrestricted File Upload)
 
 Bài viết này trình bày chi tiết quá trình thiết lập kịch bản giả lập (Lab), phân tích lỗ hổng và thực hiện hoạt động khai thác **Unrestricted File Upload** dẫn đến **Remote Code Execution (RCE)** trên một ứng dụng web.
