@@ -143,3 +143,11 @@ sử dụng command này để xóa cache trang nếu muốn test lại: localSt
 Để làm được những tác vụ nguy hiểm hơn (tắt máy, xem mật khẩu hệ thống,...), attacker phải tìm thêm một lỗ hổng khác trên Ubuntu để "nâng cấp" vỏ bọc `www-data` này lên thành `root`. Bước này được gọi là **Leo thang đặc quyền (Privilege Escalation)**.
 
 ---
+
+**nếu muốn xóa cache web thì dùng command này ở console f12: localStorage.clear(); window.location.reload();**
+
+**nếu bị lỗi zabbix không thông báo thì dùng:**
+
+- sudo systemctl restart apache2
+- sudo pkill -u www-data bash
+
