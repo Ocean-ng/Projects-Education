@@ -19,7 +19,7 @@ fake cloudflare thì này nên nè
 
 có gửi mail về lun thì tùy nghe
 
-khi mà nạn nhân mắc bẫy rồi nghĩa là nhập thông tin mình muốn có rồi thì sẽ redirect lại trang giống như như mình fake nha
+khi mà nạn nhân mắc bẫy rồi nghĩa là nhập thông tin mình muốn có rồi thì sẽ redirect lại trang giống như mình fake nha
 
 còn cổng 80 hoặc 443 cho dễ sài
 
