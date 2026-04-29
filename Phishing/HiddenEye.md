@@ -29,6 +29,14 @@ sau đó nhập địa chỉ local là 127.0.0.1
 
 rồi giờ mở thêm 1 terminal để mở web ra ngoài internet `cloudflared tunnel --url http://127.0.0.1:80`
 
+nếu bạn chưa cài cloudflare tunnel thì sử dụng các command dưới đây nhe
+
+```
+wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+sudo dpkg -i cloudflared-linux-amd64.deb
+cloudflared --version
+```
+
 <img width="1938" height="152" alt="image" src="https://github.com/user-attachments/assets/cee1b7e7-16ed-4413-a840-e80857a4e478" />
 
 giờ thì đợi victim nhập hoi nghe
